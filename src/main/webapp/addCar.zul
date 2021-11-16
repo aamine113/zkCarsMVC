@@ -1,0 +1,24 @@
+<window id="addCarWindow" title="Add a new car" width="400px" border="normal"
+        apply="tutorial.SearchController">
+    <grid>
+        <rows>
+            <row>
+                Model:
+                <textbox id="modelTextBox" value="" constraint="no empty" />
+            </row>
+            <row>
+                Make:
+                <textbox id="makeTextBox" value="" constraint="no empty" />
+            </row>
+            <row>
+                Price:
+                <intbox id="priceIntBox" value="" constraint="no empty" />
+            </row>
+            <row>
+                Colour:
+                <textbox id="colourTextBox" value="" constraint="no empty" />
+            </row>
+        </rows>
+    </grid>
+    <button id="submitButton" label="Submit" />
+</window>

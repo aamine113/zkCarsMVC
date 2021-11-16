@@ -123,7 +123,7 @@ public class SearchRichlet extends GenericRichlet {
 		
 		Window window = new Window();
 		window.setTitle("Search");
-		window.setWidth("600px");
+		window.setWidth("100%");
 		window.setBorder("normal");
 		window.appendChild(searchArea);
 		window.appendChild(carListbox);

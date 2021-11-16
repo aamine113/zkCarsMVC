@@ -16,4 +16,18 @@ public interface CarService {
 	 * @return list of car that match the keyword
 	 */
 	public List<Car> search(String keyword);
+
+	/**
+	 * create and save a new car in the Model.
+	 * @param car to create
+	 */
+	public void saveCar(Car car);
+
+	/**
+	 * remove car from the Model.
+	 * @param car to remove
+	 */
+	public void deleteCar(Car car);
+
+
 }

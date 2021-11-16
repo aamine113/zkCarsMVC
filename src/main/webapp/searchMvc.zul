@@ -4,28 +4,37 @@
 		Keyword:
 		<textbox id="keywordBox" />
 		<button id="searchButton" label="Search" image="/img/search.png" />
+		<button id="addCarButton" label="Add Car" style="float: right;" />
 	</div>
-	<listbox id="carListbox"  emptyMessage="No car found in the result" rows="5">
+	<listbox id="carListbox"  mold="paging" pageSize="5" emptyMessage="No car found in the result">
 		<listhead>
-			<listheader label="Model" />
-			<listheader label="Make" />
-			<listheader label="Price" width="20%"/>
+			<listheader label="Model" sort="auto(model)" />
+			<listheader label="Make" sort="auto(make)" />
+			<listheader label="Price" sort="auto(price)" width="20%"/>
+			<listheader label="Colour" sort="auto(colour)"/>
 		</listhead>
 		<template name="model">
 			<listitem>
 				<listcell label="${each.model}"></listcell>
 				<listcell label="${each.make}"></listcell>
-				<listcell>$<label value="${each.price}" /></listcell>
+				<listcell if="${each.price lt 20000}" style="color:green;">$<label value="${each.price}"/></listcell>
+				<listcell if="${each.price ge 20000 and each.price lt 50000}" style="color:yellow;">$<label value="${each.price}" /></listcell>
+				<listcell if="${each.price gt 50000}" style="color:red;">$<label value="${each.price}" /></listcell>
+				<listcell label="${each.colour}"></listcell>
 			</listitem>
 		</template>
 	</listbox>
-	<hlayout style="margin-top:20px" width="100%">
+	<hlayout id="detailedCar" style="margin-top:20px" width="100%">
 		<image id="previewImage" width="250px" />
 		<vlayout hflex="1">
 			<label id="modelLabel" />
 			<label id="makeLabel" />
 			<label id="priceLabel" />
+			<label id="colourLabel" />
 			<label id="descriptionLabel" />
 		</vlayout>
 	</hlayout>
+	<div style="margin: 0 auto;" >
+		<button id="deleteCar" label="Delete Car" visible="false" />
+	</div>
 </window>
